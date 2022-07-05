@@ -1,0 +1,42 @@
+
+
+<body style="text-align:center">
+    
+<form action="" method="POST" >
+
+    {%extends 'base.html' %}
+
+{%block content%}
+
+
+    {% if messages %}
+                    {% for message in messages %}
+                        <p {% if message.tags %} class="alert alert-{{message.tags}} mb-5" {% endif %}>{{message}}</p>
+                    {% endfor %}
+    {% endif %}
+
+    {% csrf_token %}
+    <h1>Registration Form</h1>
+    <label>Enter Username</label>
+    {{form.username}}
+    <br>
+
+    <label>Enter Email</label>
+    {{form.email}}
+    <br>
+
+    <label>Enter Password</label>
+    {{form.password1}}
+    <br>
+
+    <label>Verify Password</label>
+    {{form.password2}}
+    <br>
+
+    <button type="submit">Sign Up</button>
+    <br>
+<p>Already have an account? <a href="/login" >Log In</a> </p>
+</form>
+{%endblock%}
+
+</body>

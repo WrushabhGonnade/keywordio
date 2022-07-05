@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Panel</title>
+</head>
+<body>
+<form style="text-align:center">
+{%extends 'base.html' %}
+
+{%block content%}
+
+    <table class="table table-striped">
+        <tr>
+            <th>Sr No</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Category</th>
+        </tr>
+        {%for book in data%}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{book.name}}</td>
+            <td>{{book.description}}</td>
+            <td>{{book.category}}</td>
+        </tr>
+        {%endfor%}
+    </table>
+    <tr><td><a href="/" > Home</td></tr>
+
+    {% endblock %}
+</form>
+</body>
+</html>

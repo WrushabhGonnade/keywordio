@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+</head>
+<body>
+<form style="text-align:center">
+
+    {%extends 'base.html' %}
+
+{%block content%}
+
+    <table class="table table-striped">
+        <tr>
+            <th>Sr No</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Added By</th>
+            <th>Actions</h>
+        </tr>
+        {%for book in data%}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{book.name}}</td>
+            <td>{{book.description}}</td>
+            <td>{{book.category}}</td>
+            <td>{{book.user}}</td>
+
+
+              <td><a href="/edit/{{ book.id }}" type="submit" class="btn btn-success">Update</a> </td>
+
+            <td><a href="/delete/{{book.id}}" type="submit" class="btn btn-danger">Delete</a> </td>
+
+
+        </tr>
+
+        {%endfor%}
+    </table>
+    <td><a href="/logout" type="submit" class="btn btn-success">Log Out</a> </td>
+
+    {%endblock%}
+</form>
+</body>
+</html>

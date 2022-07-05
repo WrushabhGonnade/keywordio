@@ -1,0 +1,33 @@
+
+<form method="POST" action="" style="text-align:center">
+
+    {%extends 'base.html' %}
+
+{%block content%}
+
+    {% csrf_token%}
+
+    <label>Enter Book Name</label>
+    {{form.user}}
+
+    <label>Enter Book Name</label>
+    {{form.name}}
+
+    <br>
+    <td>
+    <label>Enter Book Description</label>
+    {{form.description}}
+    </td>
+    <br>
+
+    <label>Enter Book Category</label>
+    {{form.category}}
+    <br>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+    <td><a href="/adminshow" type="submit" class="btn btn-success">Show Books</a> </td>
+
+</form>
+{%endblock%}
+</body>
+</html>

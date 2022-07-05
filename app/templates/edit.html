@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+</head>
+<body>
+  {%extends 'base.html' %}
+
+  {%block content%}
+<form method="POST" action="/update/{{data.id}}" style="text-align:center">
+
+
+
+    {% csrf_token %}
+  <label>Name</label>
+    <input type="text" name="Name" required maxlength='30' value="{{data.name}}">
+
+    <br>
+
+  <label>Description</label>
+    <input type="text" name="Desc" required maxlength='1000' value="{{data.description}}">
+
+    <br>
+
+  <label>Category</label>
+   <select name="category" required maxlength='20' value="{{data.category}}">
+        <option>{{book.category}}</option>
+        <option>Motivational</option>
+        <option>Biography</option>
+        <option>Autobiography</option>
+        <option>Kids</option>
+        <option>Entertainment</option>
+        <option>Other</option>
+    </select>
+
+    <br>
+
+    <tr>
+        <button type="submit" class="btn btn-success">Submit</button>
+    </tr>
+
+</form>
+{%endblock%}
+</body>
+</html>
