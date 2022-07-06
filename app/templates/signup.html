@@ -16,7 +16,7 @@
     {% endif %}
 
     {% csrf_token %}
-    <h1>Registration Form</h1>
+    <h1>Please Register Yourself</h1>
     <label>Enter Username</label>
     {{form.username}}
     <br>
@@ -33,7 +33,7 @@
     {{form.password2}}
     <br>
 
-    <button type="submit">Sign Up</button>
+    <button type="submit" class="btn btn-success">Sign Up</button>
     <br>
 <p>Already have an account? <a href="/login" >Log In</a> </p>
 </form>

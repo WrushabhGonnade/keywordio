@@ -39,8 +39,15 @@ def edit(request,id):
 @login_required()
 def update(request, id):
     data = Book.objects.get(id=id)
-    form = BookForm(request.POST, instance=data)
-    form.save()
+    print(data)
+    if request.method=='POST':
+        form = BookForm(request.POST, instance=data)
+        if form.is_valid:
+            try:
+                form.save()
+            except:
+                pass
+    form=BookForm()
     return redirect('/adminshow')
 
 def UserRegistration(request):
@@ -60,3 +67,6 @@ def home(request):
 def studentview(request):
     data=Book.objects.all()
     return render(request,'studentview.html',{'data':data})
+@login_required()
+def select(request):
+    return render(request,'select.html')

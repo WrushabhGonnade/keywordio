@@ -32,4 +32,5 @@ urlpatterns = [
     path('',views.home),
     path('studentview/',views.studentview),
     path('logout/',auth_view.LogoutView.as_view(template_name='logout.html'), name='logout'),
+    path('select/',views.select,name='select'),
 ]

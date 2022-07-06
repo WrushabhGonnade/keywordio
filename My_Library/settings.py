@@ -120,6 +120,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-LOGIN_REDIRECT_URL='addbook'
+LOGIN_REDIRECT_URL='select'
 
 LOGIN_URL='login'
