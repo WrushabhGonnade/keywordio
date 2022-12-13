@@ -17,6 +17,7 @@ class Book(models.Model):
     name = models.CharField(max_length=30)
     description = models.TextField(max_length=500)
     category = models.CharField(choices=BOOK_CATEGORY, max_length=15)
+    # Its Demo
 
     def __str__(self):
         return self.name
